@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
+import net.ScarletWind.twobyfourgoodness.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -53,6 +54,9 @@ public class TwoByFourGoodness {
         // this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+
+        ModItems.register(modEventBus);
+        modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config
         // file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -64,6 +68,10 @@ public class TwoByFourGoodness {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+       if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+           event.accept(ModItems.PLANK.get());
+            
+        }
 
     }
 
