@@ -1,5 +1,5 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item"
+  "itemGroup.TwoByFourGoodness": "Example Mod Tab",
+  "block.TwoByFourGoodness.example_block": "Example Block",
+  "item.TwoByFourGoodness.example_item": "Example Item"
 }
